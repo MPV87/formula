@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Formula® | Luxus-Feuerzeuge &amp; Zigarrenzubehör</title>
-<meta name="description" content="Formula®: hochwertige Metallfeuerzeuge mit Jet-, Turbo- und Lichtbogen-Technik, erstklassiges Zigarrenzubehör und eine eigene Auswahl an Zigarren – edel gestaltet, fair im Preis. Eine Marke der KP Plattner GmbH.">
+<meta name="description" content="Formula®: hochwertige Metallfeuerzeuge mit Jet-, Double- und Triple-Jet-Flamme, erstklassiges Zigarrenzubehör und eine eigene Auswahl an Zigarren – edel gestaltet, fair im Preis. Eine Marke der KP Plattner GmbH.">
 <link rel="canonical" href="https://www.formula-official.com/">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
@@ -13,7 +13,7 @@
 <meta property="og:locale" content="de_AT">
 <meta property="og:site_name" content="Formula®">
 <meta property="og:title" content="Formula® | Luxus. Zum fairen Preis.">
-<meta property="og:description" content="Luxus-Feuerzeuge, ARC-Technologie und erstklassiges Zigarrenzubehör von Formula®.">
+<meta property="og:description" content="Luxus-Feuerzeuge mit Jet-, Double- und Triple-Jet-Flamme, erstklassiges Zigarrenzubehör und Zigarren von Formula®.">
 <meta property="og:url" content="https://www.formula-official.com/">
 <meta property="og:image" content="https://www.formula-official.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -118,18 +118,50 @@ header.top nav a:hover { color: #fff; }
 .detail .body .lead { color: #fff; font-family: var(--f-serif); font-size: 1.375rem; line-height: 1.5; }
 @media (max-width: 860px) { .detail .wrap { grid-template-columns: 1fr; } .detail .body { padding-top: 0; } }
 
-/* ARC */
-.arc { position: relative; overflow: hidden; }
-.arc .wrap { padding-block: clamp(88px, 12vw, 160px); text-align: center; display: grid; justify-items: center; gap: 24px; }
-.arc svg.bolt { width: min(100%, 560px); height: auto; margin-block: 8px 16px; overflow: visible; }
-.arc .post { fill: #1c1c1c; stroke: var(--grey); stroke-width: 1; }
-.arc .ray { fill: none; stroke: #fff; stroke-width: 1.6; stroke-linejoin: round; filter: drop-shadow(0 0 6px rgba(255,255,255,.7)) drop-shadow(0 0 18px rgba(140,8,8,.9)); }
-.arc .ray.b { stroke: rgba(255,255,255,.55); stroke-width: 1; }
-.arc h2 { font-size: clamp(2.25rem, 5.5vw, 4.25rem); }
-.arc h2 em { font-style: italic; }
-.arc p { max-width: 38em; color: var(--grey); }
-@media (prefers-reduced-motion: no-preference) { .arc .ray { animation: flick 2.4s steps(1) infinite; } .arc .ray.b { animation-delay: .6s; } }
-@keyframes flick { 0%, 100% { opacity: 1; } 8% { opacity: .35; } 12% { opacity: 1; } 55% { opacity: .7; } 58% { opacity: 1; } }
+/* Jet-Flamme */
+.jet .wrap { padding-block: clamp(80px, 11vw, 144px); display: grid; gap: clamp(36px, 5vw, 56px); }
+.jet .top { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: end; }
+.jet h2 { font-size: clamp(2rem, 4.4vw, 3.25rem); margin-top: 24px; }
+.jet h2 em { font-style: italic; color: var(--light); }
+.jet .top p { color: var(--grey); }
+.jets { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.jets li { background: var(--black); display: grid; gap: 6px; padding: 0 0 clamp(18px, 2.4vw, 28px); text-align: center; min-width: 0; }
+.jets .stage { --sh: clamp(200px, 26vw, 340px); height: var(--sh); display: flex; justify-content: center; align-items: flex-end; gap: clamp(2px, .8vw, 8px); padding-bottom: calc(var(--sh) * .06); margin-bottom: 14px; background: radial-gradient(40% 55% at 50% 78%, rgba(70,110,255,.22), transparent 70%), radial-gradient(30% 14% at 50% 95%, rgba(255,210,120,.18), transparent 70%); overflow: hidden; }
+.jets .jf { display: block; height: calc(var(--sh) * .8); width: auto; max-width: 28%; transform-origin: 50% 100%; filter: brightness(1.15) drop-shadow(0 0 10px rgba(90,130,255,.5)); animation: jetbuzz .1s steps(2) infinite alternate; }
+.jets .n2 .jf:nth-child(1) { transform: rotate(-4deg); animation-name: jetbuzz-l; }
+.jets .n2 .jf:nth-child(2) { transform: rotate(4deg); animation-name: jetbuzz-r; animation-delay: -.05s; }
+.jets .n3 .jf:nth-child(1) { transform: rotate(-7deg); animation-name: jetbuzz-l; }
+.jets .n3 .jf:nth-child(2) { animation-delay: -.04s; }
+.jets .n3 .jf:nth-child(3) { transform: rotate(7deg); animation-name: jetbuzz-r; animation-delay: -.07s; }
+@keyframes jetbuzz { from { transform: scale(1, 1); } to { transform: scale(.98, 1.03); } }
+@keyframes jetbuzz-l { from { transform: rotate(-5deg) scale(1, 1); } to { transform: rotate(-5deg) scale(.98, 1.03); } }
+@keyframes jetbuzz-r { from { transform: rotate(5deg) scale(1, 1); } to { transform: rotate(5deg) scale(.98, 1.03); } }
+.jets b { font-family: var(--f-serif); font-weight: 400; font-size: clamp(1.25rem, 2.4vw, 1.75rem); color: #fff; }
+.jets span { font-size: .6875rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--grey); padding-inline: 10px; }
+@media (max-width: 860px) { .jet .top { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .jets span { letter-spacing: .1em; font-size: .625rem; } .jets .stage { gap: 0; } .jets .n3 .jf, .jets .n2 .jf { height: calc(var(--sh) * .72); } }
+
+/* Zigarrenabschneider-Feature */
+.feature { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; background: #ECEBE8; color: var(--black); padding: clamp(24px, 4vw, 56px); }
+.cutter { position: relative; width: 100%; max-width: 440px; justify-self: center; aspect-ratio: 560 / 708; }
+.cutter img { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: multiply; }
+.cutter .c-open { clip-path: inset(30.7% 0 0 0); opacity: 0; animation: cutBody 4.8s ease-in-out infinite; }
+.cutter .c-top { position: absolute; left: 0; right: 0; top: 0; height: 30.93%; overflow: hidden; }
+.cutter .c-top img { mix-blend-mode: normal; height: 100%; transform: translateY(100%); animation: cutTop 4.8s ease-in-out infinite; }
+.cutter .c-closed { animation: cutClosed 4.8s ease-in-out infinite; }
+@keyframes cutClosed { 0%, 34% { opacity: 1; } 44%, 70% { opacity: 0; } 80%, 100% { opacity: 1; } }
+@keyframes cutBody { 0%, 26% { opacity: 0; } 36%, 76% { opacity: 1; } 86%, 100% { opacity: 0; } }
+@keyframes cutTop { 0%, 26% { transform: translateY(100%); } 42%, 70% { transform: translateY(0); } 86%, 100% { transform: translateY(100%); } }
+.feature .ftext { display: grid; gap: 18px; align-content: center; }
+.feature .eyebrow { color: #6b6e70; }
+.feature h3 { font-size: clamp(1.625rem, 3.6vw, 2.75rem); color: var(--black); hyphens: auto; overflow-wrap: break-word; }
+.feature h3 em { font-style: italic; color: var(--red); }
+.feature p { color: #44474a; }
+.feature .gift { display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center; border-top: 1px solid #cfcdc8; padding-top: 18px; margin-top: 6px; }
+.feature .gift img { width: 96px; height: auto; max-width: 100%; mix-blend-mode: multiply; }
+.feature .gift p { font-size: .9375rem; }
+.feature .sku { font-size: .6875rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #6b6e70; }
+@media (max-width: 860px) { .feature { grid-template-columns: minmax(0, 1fr); } .cutter { max-width: 320px; } }
 
 /* Produkt-Vitrinen */
 .showcase { border-block: 1px solid var(--line); background: var(--panel); }
@@ -138,8 +170,8 @@ header.top nav a:hover { color: #fff; }
 .showcase h2 { font-size: clamp(2rem, 4.4vw, 3.25rem); margin-top: 24px; }
 .showcase .top p { color: var(--grey); }
 .prods { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(16px, 2vw, 24px); }
-.prods.four { grid-template-columns: repeat(4, 1fr); }
-.prods.three { grid-template-columns: repeat(3, 1fr); }
+.prods.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.prods.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .prod { display: grid; gap: 10px; align-content: start; min-width: 0; }
 .prod .tile { position: relative; aspect-ratio: 1; background: #ECEBE8; overflow: hidden; }
 .prod .tile img { display: block; width: 100%; max-width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; transition: transform .6s ease; }
@@ -147,7 +179,7 @@ header.top nav a:hover { color: #fff; }
 .prod:hover .tile img { transform: scale(1.04); }
 .prod:hover .tile::after { transform: translateX(120%); }
 .prod b { hyphens: auto; overflow-wrap: anywhere; font-family: var(--f-serif); font-weight: 400; font-size: 1.1875rem; line-height: 1.25; color: #fff; }
-.prod span { font-size: .6875rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--grey); }
+.prod span { overflow-wrap: anywhere; font-size: .6875rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--grey); }
 .more { justify-self: start; display: inline-flex; gap: 12px; align-items: center; font-size: .75rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #fff; text-decoration: none; border-bottom: 1px solid var(--red); padding-bottom: 6px; }
 .more:hover { color: var(--light); border-color: #fff; }
 .cigars { display: grid; gap: clamp(24px, 3vw, 36px); border: 1px solid var(--line); padding: clamp(24px, 4vw, 44px); }
@@ -157,9 +189,9 @@ header.top nav a:hover { color: #fff; }
 .cigars h3 { font-size: clamp(1.75rem, 3.2vw, 2.5rem); }
 .cigars h3 em { font-style: italic; color: var(--light); }
 .cigars p { color: var(--grey); max-width: 44em; }
-@media (max-width: 960px) { .prods.four { grid-template-columns: repeat(2, 1fr); } .showcase .top { grid-template-columns: 1fr; } }
+@media (max-width: 960px) { .prods.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } .showcase .top { grid-template-columns: 1fr; } }
 @media (max-width: 960px) { .prods.cig { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 640px) { .prods.three { grid-template-columns: repeat(2, 1fr); } .cigars .ctext { grid-template-columns: 1fr; } .prod b { font-size: 1.0625rem; } }
+@media (max-width: 640px) { .prods.three { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cigars .ctext { grid-template-columns: 1fr; } .prod b { font-size: 1.0625rem; } }
 
 /* Händler & Partner */
 .where .wrap { padding-block: clamp(80px, 11vw, 144px); display: grid; gap: 40px; }
@@ -207,7 +239,7 @@ footer .copy { font-size: .8125rem; }
 
 .js .rv { opacity: 0; transform: translateY(16px); transition: opacity .9s ease, transform .9s ease; }
 .js .rv.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } .arc .ray { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } .jets .jf, .cutter .c-open, .cutter .c-closed, .cutter .c-top img { animation: none; } }
 </style>
 </head>
 <body>
@@ -256,7 +288,7 @@ footer .copy { font-size: .8125rem; }
     <a class="brand" href="#" aria-label="Formula® – zum Seitenanfang"><svg viewBox="0 0 171.75 45.25" width="172" height="45" aria-hidden="true"><use href="#brand-formula"/></svg></a>
     <nav aria-label="Seitennavigation">
       <a href="#feuerzeuge">Feuerzeuge</a>
-      <a class="opt" href="#arc">ARC</a>
+      <a class="opt" href="#jet">Jet-Flamme</a>
       <a href="#zigarre">Zigarre</a>
       <a class="opt" href="#haendler-partner">Händler &amp; Partner</a>
     </nav>
@@ -270,7 +302,7 @@ footer .copy { font-size: .8125rem; }
       <h1 class="rv"><span>Luxus<span class="dot">.</span></span> <span>Zum fairen Preis<span class="dot">.</span></span></h1>
       <p class="sub rv">Luxus-Feuerzeuge und erstklassiges Zigarrenzubehör für alle, die das Besondere lieben – ohne den Preis des Besonderen.</p>
       <div class="txt rv">
-        <p>Edle Metallfeuerzeuge, moderne ARC-Technologie, ausgesuchtes Zigarrenzubehör: Formula® bringt Premium dorthin, wo es hingehört – in die Hand von Genießern.</p>
+        <p>Edle Metallfeuerzeuge mit Jet-Flamme, ausgesuchtes Zigarrenzubehör und eigene Zigarren: Formula® bringt Premium dorthin, wo es hingehört – in die Hand von Genießern.</p>
         <p>Hochwertige Materialien, elegante Gestaltung, sorgfältige Verarbeitung. Und ein Preis, der fair bleibt.</p>
       </div>
       <a class="btn solid rv" href="#feuerzeuge">Formula® entdecken</a>
@@ -297,24 +329,27 @@ footer .copy { font-size: .8125rem; }
           <span class="eyebrow">Luxus-Feuerzeuge</span>
           <h2>Ein Statement in der Hand.</h2>
         </div>
-        <p class="rv">Formula® Metallfeuerzeuge verbinden edle Optik mit sorgfältiger Verarbeitung – von Jet- und Triple-Jet-Flammen bis zum wiederaufladbaren Lichtbogen. Zeitlos gestaltet, stilvoll im Alltag und ein Geschenk, das in Erinnerung bleibt.</p>
+        <p class="rv">Formula® Metallfeuerzeuge verbinden edle Optik mit sorgfältiger Verarbeitung – viele davon mit Jet-, Double- oder Triple-Jet-Flamme, ergänzt um wiederaufladbare Lichtbogen-Modelle. Zeitlos gestaltet, stilvoll im Alltag und ein Geschenk, das in Erinnerung bleibt.</p>
       </div>
-      <ul class="prods four rv"><li class="prod"><div class="tile"><img src="img/sortiment/formula-lumina-double-arc.webp" alt="Formula Crocodile Lumina" width="600" height="600" loading="lazy"></div><b>Crocodile Lumina</b><span>Double Arc</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-avanti-triple-jet.webp" alt="Formula Crocodile Avanti" width="600" height="600" loading="lazy"></div><b>Crocodile Avanti</b><span>Triple-Jet</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-levi-piezo-jet.webp" alt="Formula Crocodile Levi" width="600" height="600" loading="lazy"></div><b>Crocodile Levi</b><span>Piezo · Jet Flame</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-velaro-triple-jet.webp" alt="Formula Crocodile Velaro" width="600" height="600" loading="lazy"></div><b>Crocodile Velaro</b><span>Triple-Jet</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-ignis-extreme.webp" alt="Formula Crocodile Ignis Extreme" width="600" height="600" loading="lazy"></div><b>Crocodile Ignis Extreme</b><span>Crocodile-Serie</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-double-flame.webp" alt="Formula Crocodile Double Flame" width="600" height="600" loading="lazy"></div><b>Crocodile Double Flame</b><span>Double Flame</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-icon-jet-flame.webp" alt="Formula Crocodile Icon" width="600" height="600" loading="lazy"></div><b>Crocodile Icon</b><span>Jet Flame</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-double-arc.webp" alt="Formula Double Arc" width="600" height="600" loading="lazy"></div><b>Double Arc</b><span>Lichtbogen</span></li></ul>
+      <ul class="prods four rv"><li class="prod"><div class="tile"><img src="img/sortiment/formula-avanti-triple-jet.webp" alt="Formula Crocodile Avanti" width="600" height="600" loading="lazy"></div><b>Crocodile Avanti</b><span>Triple-Jet</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-velaro-triple-jet.webp" alt="Formula Crocodile Velaro" width="600" height="600" loading="lazy"></div><b>Crocodile Velaro</b><span>Triple-Jet</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-blaze-double-jet.webp" alt="Formula Crocodile Blaze" width="600" height="600" loading="lazy"></div><b>Crocodile Blaze</b><span>Double-Jet</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-icon-jet-flame.webp" alt="Formula Crocodile Icon" width="600" height="600" loading="lazy"></div><b>Crocodile Icon</b><span>Jet Flame</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-levi-piezo-jet.webp" alt="Formula Crocodile Levi" width="600" height="600" loading="lazy"></div><b>Crocodile Levi</b><span>Piezo · Jet Flame</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-double-flame.webp" alt="Formula Crocodile Double Flame" width="600" height="600" loading="lazy"></div><b>Crocodile Double Flame</b><span>Double Flame</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-ignis-extreme.webp" alt="Formula Crocodile Ignis Extreme" width="600" height="600" loading="lazy"></div><b>Crocodile Ignis Extreme</b><span>Crocodile-Serie</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-lumina-double-arc.webp" alt="Formula Crocodile Lumina" width="600" height="600" loading="lazy"></div><b>Crocodile Lumina</b><span>Double Arc · wiederaufladbar</span></li></ul>
       <a class="more rv" href="https://www.kp-plattner.at/Raucherbedarf/Feuerzeuge_RBA?filter_marke=Formula" target="_blank" rel="noopener">Alle Formula® Feuerzeuge bei KP Plattner <span aria-hidden="true">→</span></a>
     </div>
   </section>
 
-  <section class="arc" id="arc">
+  <section class="jet" id="jet">
     <div class="wrap">
-      <span class="eyebrow rv">ARC-Technologie</span>
-      <svg class="bolt rv" viewBox="0 0 560 120" aria-hidden="true">
-        <rect class="post" x="0" y="44" width="70" height="32" rx="2"/>
-        <rect class="post" x="490" y="44" width="70" height="32" rx="2"/>
-        <polyline class="ray" points="70,60 110,48 150,70 196,42 240,66 286,50 330,72 372,46 416,64 452,52 490,60"/>
-        <polyline class="ray b" points="70,60 118,72 160,52 204,74 248,54 292,70 336,48 380,68 424,50 460,66 490,60"/>
-      </svg>
-      <h2 class="rv">Feuer <em>neu gedacht.</em></h2>
-      <p class="rv">Lichtbogen statt Flamme, aufladen statt nachfüllen: Formula® ARC-Feuerzeuge arbeiten mit elektrischer Lichtbogentechnik und sind wiederaufladbar. Modelle wie Formula ARC Promotion und Double ARC verbinden moderne Technik mit reduzierter, hochwertiger Gestaltung.</p>
+      <div class="top">
+        <div class="rv">
+          <span class="eyebrow">Jet-Flamme</span>
+          <h2>Gebündelte Kraft. <em>In jeder Form.</em></h2>
+        </div>
+        <p class="rv">Viele Formula® Feuerzeuge arbeiten mit einer Jet-Flamme – fokussiert, kraftvoll und wie gemacht für den Zigarrengenuss. Je nach Modell mit einer, zwei oder drei Düsen.</p>
+      </div>
+      <ul class="jets rv">
+        <li><div class="stage n1" aria-hidden="true"><img class="jf" src="img/feature/jet-flamme.webp" alt="" width="180" height="640"></div><b>Jet</b><span>z. B. Crocodile Icon, Levi</span></li>
+        <li><div class="stage n2" aria-hidden="true"><img class="jf" src="img/feature/jet-flamme.webp" alt="" width="180" height="640"><img class="jf" src="img/feature/jet-flamme.webp" alt="" width="180" height="640"></div><b>Double-Jet</b><span>z. B. Crocodile Blaze</span></li>
+        <li><div class="stage n3" aria-hidden="true"><img class="jf" src="img/feature/jet-flamme.webp" alt="" width="180" height="640"><img class="jf" src="img/feature/jet-flamme.webp" alt="" width="180" height="640"><img class="jf" src="img/feature/jet-flamme.webp" alt="" width="180" height="640"></div><b>Triple-Jet</b><span>z. B. Crocodile Avanti, Velaro</span></li>
+      </ul>
     </div>
   </section>
 
@@ -326,6 +361,23 @@ footer .copy { font-size: .8125rem; }
           <h2>Für den perfekten Zigarrenmoment.</h2>
         </div>
         <p class="rv">Präzise Zigarrenschneider, edle Etuis und eine eigene Auswahl an Zigarren: Formula® begleitet den Genuss vom ersten Schnitt bis zum letzten Zug – mit demselben Anspruch an Material und Gestaltung wie bei unseren Feuerzeugen.</p>
+      </div>
+      <div class="feature rv">
+        <div class="cutter" role="img" aria-label="Formula Zigarrenabschneider öffnet und schließt sich">
+          <img class="c-closed" src="img/feature/cutter-geschlossen.webp" alt="" width="560" height="708">
+          <img class="c-open" src="img/feature/cutter-offen.webp" alt="" width="560" height="708">
+          <div class="c-top"><img src="img/feature/cutter-schaft.webp" alt="" width="560" height="219"></div>
+        </div>
+        <div class="ftext">
+          <span class="eyebrow">Im Fokus</span>
+          <h3>Formula® Zigarrenabschneider. <em>Ein Klick, ein Schnitt.</em></h3>
+          <p>Kompakt, griffig und mit präzisem Mechanismus: Öffnen, Zigarre einführen, schließen – für einen sauberen Anschnitt. In Schwarz und Silber erhältlich.</p>
+          <span class="sku">Art.-Nr. 25181B · 25181A</span>
+          <div class="gift">
+            <img src="img/feature/cutter-geschenkverpackung.webp" alt="Formula Zigarrenabschneider in der Geschenkverpackung" width="440" height="700" loading="lazy">
+            <p>Geliefert in der edlen Formula® Geschenkverpackung – ein Präsent, das ankommt.</p>
+          </div>
+        </div>
       </div>
       <ul class="prods three rv"><li class="prod"><div class="tile"><img src="img/sortiment/formula-zigarrenabschneider-gold.webp" alt="Formula Zigarrenabschneider" width="600" height="600" loading="lazy"></div><b>Zigarrenabschneider</b><span>Gold</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-zigarrenabschneider-3in1.webp" alt="Formula Zigarrenabschneider 3 in one" width="600" height="600" loading="lazy"></div><b>Zigarrenabschneider 3 in one</b><span>Carbon-Design</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-abschneider-bohrer.webp" alt="Formula Zigarrenabschneider &amp; Bohrer" width="600" height="600" loading="lazy"></div><b>Zigarrenabschneider &amp; Bohrer</b><span>Gun</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-zigarrenetui-robusto.webp" alt="Formula Zigarrenetui 2-er Robusto" width="600" height="600" loading="lazy"></div><b>Zigarrenetui 2-er Robusto</b><span>Schwarz</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-humidor-travel-bag.webp" alt="Formula Humidor Travel Bag" width="600" height="600" loading="lazy"></div><b>Humidor Travel Bag</b><span>Reise</span></li><li class="prod"><div class="tile"><img src="img/sortiment/formula-zigarrenaschenbecher-glas.webp" alt="Formula Zigarrenaschenbecher" width="600" height="600" loading="lazy"></div><b>Zigarrenaschenbecher</b><span>Glas</span></li></ul>
       <a class="more rv" href="https://www.kp-plattner.at/Raucherbedarf/Zigarrenzubehoer?filter_marke=Formula" target="_blank" rel="noopener">Alle Formula® Zigarrenzubehör-Artikel bei KP Plattner <span aria-hidden="true">→</span></a>
@@ -363,7 +415,7 @@ footer .copy { font-size: .8125rem; }
   <section class="closing">
     <div class="wrap">
       <h2 class="rv">Gönnen Sie sich Formula®.</h2>
-      <p class="rv">Luxus-Feuerzeuge, ARC-Technologie, erstklassiges Zigarrenzubehör und Zigarren – entdecken Sie die Formula® Produktwelt.</p>
+      <p class="rv">Luxus-Feuerzeuge, erstklassiges Zigarrenzubehör und Zigarren – entdecken Sie die Formula® Produktwelt.</p>
       <div class="ctas rv"><a class="btn" href="https://www.kp-plattner.at/Raucherbedarf/Feuerzeuge_RBA?filter_marke=Formula" target="_blank" rel="noopener">Formula® Feuerzeuge</a><a class="btn" href="https://www.kp-plattner.at/Raucherbedarf/Zigarrenzubehoer?filter_marke=Formula" target="_blank" rel="noopener">Formula® Zigarrenzubehör</a></div>
     </div>
   </section>
