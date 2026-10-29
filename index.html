@@ -126,20 +126,17 @@ header.top nav a:hover { color: #fff; }
 .jet .top p { color: var(--grey); }
 .jets { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
 .jets li { background: var(--black); display: grid; gap: 6px; padding: 0 0 clamp(18px, 2.4vw, 28px); text-align: center; min-width: 0; }
-.jets .stage { --sh: clamp(200px, 26vw, 340px); height: var(--sh); display: flex; justify-content: center; align-items: flex-end; gap: clamp(2px, .8vw, 8px); padding-bottom: calc(var(--sh) * .06); margin-bottom: 14px; background: radial-gradient(40% 55% at 50% 78%, rgba(70,110,255,.22), transparent 70%), radial-gradient(30% 14% at 50% 95%, rgba(255,210,120,.18), transparent 70%); overflow: hidden; }
-.jets .jf { display: block; height: calc(var(--sh) * .8); width: auto; max-width: 28%; transform-origin: 50% 100%; filter: brightness(1.15) drop-shadow(0 0 10px rgba(90,130,255,.5)); animation: jetbuzz .1s steps(2) infinite alternate; }
-.jets .n2 .jf:nth-child(1) { transform: rotate(-4deg); animation-name: jetbuzz-l; }
-.jets .n2 .jf:nth-child(2) { transform: rotate(4deg); animation-name: jetbuzz-r; animation-delay: -.05s; }
-.jets .n3 .jf:nth-child(1) { transform: rotate(-7deg); animation-name: jetbuzz-l; }
+.jets .stage { --sh: clamp(200px, 26vw, 340px); height: var(--sh); display: flex; justify-content: center; align-items: flex-end; gap: 0; padding-bottom: calc(var(--sh) * .06); margin-bottom: 14px; background: radial-gradient(40% 55% at 50% 78%, rgba(70,110,255,.22), transparent 70%), radial-gradient(30% 14% at 50% 95%, rgba(255,210,120,.18), transparent 70%); overflow: hidden; }
+.jets .jf { display: block; height: calc(var(--sh) * .8); width: auto; max-width: none; flex: none; transform-origin: 50% 100%; filter: brightness(1.15) drop-shadow(0 0 10px rgba(90,130,255,.5)); animation: jetbuzz .1s steps(2) infinite alternate; }
+.jets .n2 .jf, .jets .n3 .jf { margin-inline: calc(var(--sh) * -.075); }
+.jets .n2 .jf:nth-child(2) { animation-delay: -.05s; }
 .jets .n3 .jf:nth-child(2) { animation-delay: -.04s; }
-.jets .n3 .jf:nth-child(3) { transform: rotate(7deg); animation-name: jetbuzz-r; animation-delay: -.07s; }
+.jets .n3 .jf:nth-child(3) { animation-delay: -.07s; }
 @keyframes jetbuzz { from { transform: scale(1, 1); } to { transform: scale(.98, 1.03); } }
-@keyframes jetbuzz-l { from { transform: rotate(-5deg) scale(1, 1); } to { transform: rotate(-5deg) scale(.98, 1.03); } }
-@keyframes jetbuzz-r { from { transform: rotate(5deg) scale(1, 1); } to { transform: rotate(5deg) scale(.98, 1.03); } }
 .jets b { font-family: var(--f-serif); font-weight: 400; font-size: clamp(1.25rem, 2.4vw, 1.75rem); color: #fff; }
 .jets span { font-size: .6875rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--grey); padding-inline: 10px; }
 @media (max-width: 860px) { .jet .top { grid-template-columns: 1fr; } }
-@media (max-width: 560px) { .jets span { letter-spacing: .1em; font-size: .625rem; } .jets .stage { gap: 0; } .jets .n3 .jf, .jets .n2 .jf { height: calc(var(--sh) * .72); } }
+@media (max-width: 560px) { .jets span { letter-spacing: .1em; font-size: .625rem; } }
 
 /* Zigarrenabschneider-Feature */
 .feature { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; background: #ECEBE8; color: var(--black); padding: clamp(24px, 4vw, 56px); }
